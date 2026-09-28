@@ -1,0 +1,323 @@
+{
+  "fixture_class": "SYNTHETIC_CONTRACT_FIXTURE",
+  "schema": "../decision.event.v1.schema.json",
+  "valid": [
+    {
+      "schema_version": 1,
+      "event_id": "evt:synthetic:1",
+      "producer_id": "sim:test",
+      "operation_id": "op:1",
+      "event_kind": "ABSTENTION",
+      "source_environment": "PAPER",
+      "recorded_at": "2026-09-27T12:00:00Z",
+      "event_at": "2026-09-27T12:00:00Z",
+      "known_at": "2026-09-27T12:00:00Z",
+      "outcome_known_at": null,
+      "assessment_revision": 0,
+      "predecessor_event_id": null,
+      "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "input_refs": [
+        {
+          "ref_id": "synthetic:dataset:1",
+          "source_id": "SYNTHETIC",
+          "dataset_revision": "1",
+          "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "knowledge_time": "2026-09-27T12:00:00Z",
+          "rights_policy_id": "synthetic-only",
+          "access_class": "CENTRAL_REF_ONLY",
+          "available": false
+        }
+      ],
+      "coverage": "IMPORTED",
+      "evidence_refs": [],
+      "classification": "LOCAL_FULL",
+      "details_ref": null,
+      "stream_id": "synthetic-stream",
+      "stream_epoch": "synthetic-epoch-1",
+      "sequence": "0",
+      "event_at_precision": "SECOND",
+      "critic_status": "NOT_RUN",
+      "critic_result_ref": null
+    },
+    {
+      "schema_version": 1,
+      "event_id": "evt:synthetic:1",
+      "producer_id": "sim:test",
+      "operation_id": "op:1",
+      "event_kind": "ABSTENTION",
+      "source_environment": "PAPER",
+      "recorded_at": "2026-09-27T12:00:00Z",
+      "event_at": "2026-09-27",
+      "known_at": "2026-09-27T12:00:00Z",
+      "outcome_known_at": null,
+      "assessment_revision": 0,
+      "predecessor_event_id": null,
+      "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "input_refs": [
+        {
+          "ref_id": "synthetic:dataset:1",
+          "source_id": "SYNTHETIC",
+          "dataset_revision": "1",
+          "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "knowledge_time": "2026-09-27T12:00:00Z",
+          "rights_policy_id": "synthetic-only",
+          "access_class": "CENTRAL_REF_ONLY",
+          "available": false
+        }
+      ],
+      "coverage": "IMPORTED",
+      "evidence_refs": [],
+      "classification": "LOCAL_FULL",
+      "details_ref": null,
+      "stream_id": "synthetic-stream",
+      "stream_epoch": "synthetic-epoch-1",
+      "sequence": "0",
+      "event_at_precision": "DAY",
+      "critic_status": "NOT_RUN",
+      "critic_result_ref": null
+    }
+  ],
+  "invalid": [
+    {
+      "name": "missing knowledge time",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "ref_id": "synthetic:dataset:1",
+            "source_id": "SYNTHETIC",
+            "dataset_revision": "1",
+            "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "knowledge_time": "2026-09-27T12:00:00Z",
+            "rights_policy_id": "synthetic-only",
+            "access_class": "CENTRAL_REF_ONLY",
+            "available": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "classification": "LOCAL_FULL",
+        "details_ref": null,
+        "stream_id": "synthetic-stream",
+        "stream_epoch": "synthetic-epoch-1",
+        "sequence": "0",
+        "event_at_precision": "SECOND",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "raw market dump forbidden",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "ref_id": "synthetic:dataset:1",
+            "source_id": "SYNTHETIC",
+            "dataset_revision": "1",
+            "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "knowledge_time": "2026-09-27T12:00:00Z",
+            "rights_policy_id": "synthetic-only",
+            "access_class": "CENTRAL_REF_ONLY",
+            "available": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "classification": "LOCAL_FULL",
+        "details_ref": null,
+        "raw_market": {
+          "price": 1
+        },
+        "stream_id": "synthetic-stream",
+        "stream_epoch": "synthetic-epoch-1",
+        "sequence": "0",
+        "event_at_precision": "SECOND",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "critic pass without evidence",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "ref_id": "synthetic:dataset:1",
+            "source_id": "SYNTHETIC",
+            "dataset_revision": "1",
+            "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "knowledge_time": "2026-09-27T12:00:00Z",
+            "rights_policy_id": "synthetic-only",
+            "access_class": "CENTRAL_REF_ONLY",
+            "available": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "classification": "LOCAL_FULL",
+        "details_ref": null,
+        "stream_id": "synthetic-stream",
+        "stream_epoch": "synthetic-epoch-1",
+        "sequence": "0",
+        "event_at_precision": "SECOND",
+        "critic_status": "PASS",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "missing sequence",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "ref_id": "synthetic:dataset:1",
+            "source_id": "SYNTHETIC",
+            "dataset_revision": "1",
+            "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "knowledge_time": "2026-09-27T12:00:00Z",
+            "rights_policy_id": "synthetic-only",
+            "access_class": "CENTRAL_REF_ONLY",
+            "available": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "classification": "LOCAL_FULL",
+        "details_ref": null,
+        "stream_id": "synthetic-stream",
+        "stream_epoch": "synthetic-epoch-1",
+        "event_at_precision": "SECOND",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "unknown timestamp precision invented",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T00:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "ref_id": "synthetic:dataset:1",
+            "source_id": "SYNTHETIC",
+            "dataset_revision": "1",
+            "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "knowledge_time": "2026-09-27T12:00:00Z",
+            "rights_policy_id": "synthetic-only",
+            "access_class": "CENTRAL_REF_ONLY",
+            "available": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "classification": "LOCAL_FULL",
+        "details_ref": null,
+        "stream_id": "synthetic-stream",
+        "stream_epoch": "synthetic-epoch-1",
+        "sequence": "0",
+        "event_at_precision": "UNKNOWN",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "sequence unsafe number",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "ref_id": "synthetic:dataset:1",
+            "source_id": "SYNTHETIC",
+            "dataset_revision": "1",
+            "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "knowledge_time": "2026-09-27T12:00:00Z",
+            "rights_policy_id": "synthetic-only",
+            "access_class": "CENTRAL_REF_ONLY",
+            "available": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "classification": "LOCAL_FULL",
+        "details_ref": null,
+        "stream_id": "synthetic-stream",
+        "stream_epoch": "synthetic-epoch-1",
+        "sequence": 9007199254740993,
+        "event_at_precision": "SECOND",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    }
+  ]
+}

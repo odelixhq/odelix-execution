@@ -1,0 +1,23 @@
+{
+  "status": "ILLUSTRATIVE_DESIGN_VECTOR_NOT_PRODUCTION_TEST",
+  "profile": "LINEAR_EUROPEAN_USDC_CALL_VERTICAL",
+  "settlement_decimals": 6,
+  "underlying_multiplier": "1",
+  "strike_low": "100000",
+  "strike_high": "110000",
+  "premium_units": 300000000,
+  "buyer_fee_units": 2000000,
+  "seller_fee_units": 2000000,
+  "buyer_debit_units": 302000000,
+  "seller_net_credit_units": 298000000,
+  "protocol_fee_units": 4000000,
+  "seller_future_liability_lock_units": 10000000000,
+  "seller_initial_funding_units": 9702000000,
+  "cases": [
+    {"settlement_spot": "0", "buyer_payout_units": 0},
+    {"settlement_spot": "100000", "buyer_payout_units": 0},
+    {"settlement_spot": "105000", "buyer_payout_units": 5000000000},
+    {"settlement_spot": "110000", "buyer_payout_units": 10000000000},
+    {"settlement_spot": "1000000", "buyer_payout_units": 10000000000}
+  ]
+}

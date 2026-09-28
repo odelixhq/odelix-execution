@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.odelix.invalid/draft/policy.bundle.v1",
+  "title": "policy.bundle.v1",
+  "description": "DRAFT unpublished Odelix contract. JSON validation alone does not prove authorisation, chronology, signatures or runtime behaviour.",
+  "x-release": "r15.11",
+  "x-status": "DRAFT_UNPUBLISHED",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "environment": {
+      "const": "PAPER"
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "definition_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "policy_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "max_steps": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000
+        },
+        "max_simulated_events": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000
+        },
+        "on_uncertain_input": {
+          "const": "PAUSE"
+        },
+        "stop_policy_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        }
+      },
+      "required": [
+        "policy_id",
+        "max_steps",
+        "max_simulated_events",
+        "on_uncertain_input",
+        "stop_policy_ref"
+      ],
+      "additionalProperties": false
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "issuer": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "signature_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    }
+  },
+  "required": [
+    "schema_version",
+    "environment",
+    "manifest_sha256",
+    "definition_sha256",
+    "policy",
+    "valid_until",
+    "issuer",
+    "signature_ref"
+  ],
+  "additionalProperties": false
+}

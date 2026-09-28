@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.odelix.invalid/draft/simulation.scenario.v1",
+  "title": "simulation.scenario.v1",
+  "description": "DRAFT unpublished Odelix contract. JSON validation alone does not prove authorisation, chronology, signatures or runtime behaviour.",
+  "x-release": "r15.11",
+  "x-status": "DRAFT_UNPUBLISHED",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "environment": {
+      "const": "PAPER"
+    },
+    "dataset_ref": {
+      "type": "object",
+      "properties": {
+        "ref_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "dataset_revision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "content_sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "knowledge_time": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rights_policy_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "access_class": {
+          "enum": [
+            "LOCAL_ONLY",
+            "CENTRAL_REF_ONLY",
+            "AUTHORIZED_CONTENT"
+          ]
+        },
+        "available": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ref_id",
+        "source_id",
+        "dataset_revision",
+        "content_sha256",
+        "knowledge_time",
+        "rights_policy_id",
+        "access_class",
+        "available"
+      ],
+      "additionalProperties": false
+    },
+    "clock": {
+      "const": "DETERMINISTIC_REPLAY"
+    },
+    "max_events": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "simulation_model_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "research_validation_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "quality_label": {
+      "enum": [
+        "SYNTHETIC",
+        "CAPTURED_PERMITTED"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "scenario_id",
+    "environment",
+    "dataset_ref",
+    "clock",
+    "max_events",
+    "simulation_model_ref",
+    "research_validation_ref",
+    "quality_label"
+  ],
+  "additionalProperties": false
+}

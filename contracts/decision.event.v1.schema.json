@@ -1,0 +1,395 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.odelix.invalid/draft/decision.event.v1",
+  "title": "DecisionEvent (producer)",
+  "description": "Draft producer DecisionEvent v1. DecisionRecord is the Product projection, not this wire event. Renames unpublished r15.9 decision.record.v1; adapter migration must not invent missing sequence or Critic outcome.",
+  "x-release": "r15.11",
+  "x-status": "DRAFT_UNPUBLISHED",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "producer_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "operation_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "event_kind": {
+      "enum": [
+        "OBSERVATION",
+        "PROPOSAL",
+        "ABSTENTION",
+        "POLICY_REJECTION",
+        "APPROVAL_REQUEST",
+        "APPROVAL_REJECTED",
+        "APPROVAL_EXPIRED",
+        "SIMULATION_CHANGE",
+        "OUTCOME",
+        "REFLECTION",
+        "STOP_REQUEST",
+        "STOP_ATTEMPT",
+        "STOP_CONFIRMED",
+        "UNKNOWN_RESULT"
+      ]
+    },
+    "source_environment": {
+      "enum": [
+        "REPLAY",
+        "PAPER",
+        "TESTNET",
+        "LIVE",
+        "UNKNOWN"
+      ]
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "event_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "known_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "outcome_known_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "assessment_revision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "predecessor_event_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "agent_manifest_sha256": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "input_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ref_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "source_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "dataset_revision": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "content_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "knowledge_time": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "rights_policy_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "access_class": {
+            "enum": [
+              "LOCAL_ONLY",
+              "CENTRAL_REF_ONLY",
+              "AUTHORIZED_CONTENT"
+            ]
+          },
+          "available": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "ref_id",
+          "source_id",
+          "dataset_revision",
+          "content_sha256",
+          "knowledge_time",
+          "rights_policy_id",
+          "access_class",
+          "available"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 10000
+    },
+    "coverage": {
+      "enum": [
+        "IMPORTED",
+        "RECONSTRUCTABLE",
+        "VERIFIED_AS_SHOWN"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2048
+      },
+      "maxItems": 10000
+    },
+    "classification": {
+      "enum": [
+        "LOCAL_FULL",
+        "CENTRAL_ALLOWED"
+      ]
+    },
+    "details_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "stream_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "stream_epoch": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "sequence": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$",
+      "description": "Decimal-string sequence allocated by this producer stream epoch; not claimed to be upstream trade sequence."
+    },
+    "event_at_precision": {
+      "enum": [
+        "NANOSECOND",
+        "MICROSECOND",
+        "MILLISECOND",
+        "SECOND",
+        "DAY",
+        "UNKNOWN"
+      ]
+    },
+    "critic_status": {
+      "enum": [
+        "NOT_RUN",
+        "PASS",
+        "PASS_WITH_LIMITATIONS",
+        "REPAIR",
+        "BLOCK_NO_CONCLUSION",
+        "ERROR"
+      ]
+    },
+    "critic_result_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "event_id",
+    "producer_id",
+    "operation_id",
+    "event_kind",
+    "source_environment",
+    "recorded_at",
+    "event_at",
+    "known_at",
+    "outcome_known_at",
+    "assessment_revision",
+    "predecessor_event_id",
+    "agent_manifest_sha256",
+    "input_refs",
+    "coverage",
+    "evidence_refs",
+    "classification",
+    "details_ref",
+    "stream_id",
+    "stream_epoch",
+    "sequence",
+    "event_at_precision",
+    "critic_status",
+    "critic_result_ref"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "event_at_precision": {
+            "const": "UNKNOWN"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "event_at": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_at": {
+            "type": "null"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "event_at_precision": {
+            "const": "UNKNOWN"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_at_precision": {
+            "const": "DAY"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "event_at": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_at_precision": {
+            "enum": [
+              "NANOSECOND",
+              "MICROSECOND",
+              "MILLISECOND",
+              "SECOND"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "event_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "critic_status": {
+            "const": "NOT_RUN"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "critic_result_ref": {
+            "type": "null"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "critic_result_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          }
+        }
+      }
+    }
+  ]
+}

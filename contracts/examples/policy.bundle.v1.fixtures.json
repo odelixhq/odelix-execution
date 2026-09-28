@@ -1,0 +1,63 @@
+{
+  "fixture_class": "SYNTHETIC_CONTRACT_FIXTURE",
+  "schema": "../policy.bundle.v1.schema.json",
+  "valid": [
+    {
+      "schema_version": 1,
+      "environment": "PAPER",
+      "manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "definition_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "policy": {
+        "policy_id": "sim-policy:1",
+        "max_steps": 100,
+        "max_simulated_events": 1000,
+        "on_uncertain_input": "PAUSE",
+        "stop_policy_ref": "sim-stop-v1"
+      },
+      "valid_until": "2026-09-28T12:00:00Z",
+      "issuer": "synthetic-test",
+      "signature_ref": "synthetic-signature-not-verified"
+    }
+  ],
+  "invalid": [
+    {
+      "name": "live policy rejected",
+      "data": {
+        "schema_version": 1,
+        "environment": "LIVE",
+        "manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "definition_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "policy": {
+          "policy_id": "sim-policy:1",
+          "max_steps": 100,
+          "max_simulated_events": 1000,
+          "on_uncertain_input": "PAUSE",
+          "stop_policy_ref": "sim-stop-v1"
+        },
+        "valid_until": "2026-09-28T12:00:00Z",
+        "issuer": "synthetic-test",
+        "signature_ref": "synthetic-signature-not-verified"
+      }
+    },
+    {
+      "name": "secret rejected",
+      "data": {
+        "schema_version": 1,
+        "environment": "PAPER",
+        "manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "definition_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "policy": {
+          "policy_id": "sim-policy:1",
+          "max_steps": 100,
+          "max_simulated_events": 1000,
+          "on_uncertain_input": "PAUSE",
+          "stop_policy_ref": "sim-stop-v1"
+        },
+        "valid_until": "2026-09-28T12:00:00Z",
+        "issuer": "synthetic-test",
+        "signature_ref": "synthetic-signature-not-verified",
+        "api_key": "not-a-key"
+      }
+    }
+  ]
+}

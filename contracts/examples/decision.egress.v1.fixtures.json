@@ -1,0 +1,572 @@
+{
+  "fixture_class": "SYNTHETIC_CONTRACT_FIXTURE",
+  "schema": "../decision.egress.v1.schema.json",
+  "valid": [
+    {
+      "schema_version": 1,
+      "event_id": "evt:synthetic:1",
+      "producer_id": "sim:test",
+      "operation_id": "op:1",
+      "event_kind": "ABSTENTION",
+      "source_environment": "PAPER",
+      "recorded_at": "2026-09-27T12:00:00Z",
+      "event_at": "2026-09-27T12:00:00Z",
+      "known_at": "2026-09-27T12:00:00Z",
+      "outcome_known_at": null,
+      "assessment_revision": 0,
+      "predecessor_event_id": null,
+      "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "input_refs": [
+        {
+          "opaque_ref": "local:ref:1",
+          "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "resolvable": false
+        }
+      ],
+      "coverage": "IMPORTED",
+      "evidence_refs": [],
+      "rights_decision_ref": "synthetic:egress-allow:1",
+      "redaction_profile": "MINIMAL_REFS_V1",
+      "permitted_operation": "CENTRAL_AUDIT_METADATA",
+      "stream_id": "synthetic:producer-stream",
+      "stream_epoch": "synthetic:epoch-1",
+      "sequence": "0",
+      "event_at_precision": "SECOND",
+      "critic_status": "NOT_RUN",
+      "critic_result_ref": null
+    },
+    {
+      "schema_version": 1,
+      "event_id": "synthetic:day-only",
+      "producer_id": "sim:test",
+      "operation_id": "op:1",
+      "event_kind": "ABSTENTION",
+      "source_environment": "PAPER",
+      "recorded_at": "2026-09-27T12:00:00Z",
+      "event_at": "2026-09-27",
+      "known_at": "2026-09-27T12:00:00Z",
+      "outcome_known_at": null,
+      "assessment_revision": 0,
+      "predecessor_event_id": null,
+      "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "input_refs": [
+        {
+          "opaque_ref": "local:ref:1",
+          "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "resolvable": false
+        }
+      ],
+      "coverage": "IMPORTED",
+      "evidence_refs": [],
+      "rights_decision_ref": "synthetic:egress-allow:1",
+      "redaction_profile": "MINIMAL_REFS_V1",
+      "permitted_operation": "CENTRAL_AUDIT_METADATA",
+      "stream_id": "synthetic:producer-stream",
+      "stream_epoch": "synthetic:epoch-1",
+      "sequence": "0",
+      "event_at_precision": "DAY",
+      "critic_status": "NOT_RUN",
+      "critic_result_ref": null
+    },
+    {
+      "schema_version": 1,
+      "event_id": "synthetic:unknown-time",
+      "producer_id": "sim:test",
+      "operation_id": "op:1",
+      "event_kind": "ABSTENTION",
+      "source_environment": "PAPER",
+      "recorded_at": "2026-09-27T12:00:00Z",
+      "event_at": null,
+      "known_at": "2026-09-27T12:00:00Z",
+      "outcome_known_at": null,
+      "assessment_revision": 0,
+      "predecessor_event_id": null,
+      "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "input_refs": [
+        {
+          "opaque_ref": "local:ref:1",
+          "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "resolvable": false
+        }
+      ],
+      "coverage": "IMPORTED",
+      "evidence_refs": [],
+      "rights_decision_ref": "synthetic:egress-allow:1",
+      "redaction_profile": "MINIMAL_REFS_V1",
+      "permitted_operation": "CENTRAL_AUDIT_METADATA",
+      "stream_id": "synthetic:producer-stream",
+      "stream_epoch": "synthetic:epoch-1",
+      "sequence": "0",
+      "event_at_precision": "UNKNOWN",
+      "critic_status": "NOT_RUN",
+      "critic_result_ref": null
+    },
+    {
+      "schema_version": 1,
+      "event_id": "synthetic:critic",
+      "producer_id": "sim:test",
+      "operation_id": "op:1",
+      "event_kind": "ABSTENTION",
+      "source_environment": "PAPER",
+      "recorded_at": "2026-09-27T12:00:00Z",
+      "event_at": "2026-09-27T12:00:00Z",
+      "known_at": "2026-09-27T12:00:00Z",
+      "outcome_known_at": null,
+      "assessment_revision": 0,
+      "predecessor_event_id": null,
+      "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "input_refs": [
+        {
+          "opaque_ref": "local:ref:1",
+          "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "resolvable": false
+        }
+      ],
+      "coverage": "IMPORTED",
+      "evidence_refs": [],
+      "rights_decision_ref": "synthetic:egress-allow:1",
+      "redaction_profile": "MINIMAL_REFS_V1",
+      "permitted_operation": "CENTRAL_AUDIT_METADATA",
+      "stream_id": "synthetic:producer-stream",
+      "stream_epoch": "synthetic:epoch-1",
+      "sequence": "0",
+      "event_at_precision": "SECOND",
+      "critic_status": "PASS",
+      "critic_result_ref": "opaque:permitted-critic-receipt"
+    }
+  ],
+  "invalid": [
+    {
+      "name": "raw field not allowed",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "opaque_ref": "local:ref:1",
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "resolvable": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "rights_decision_ref": "synthetic:egress-allow:1",
+        "redaction_profile": "MINIMAL_REFS_V1",
+        "permitted_operation": "CENTRAL_AUDIT_METADATA",
+        "raw_quote": "1",
+        "stream_id": "synthetic:producer-stream",
+        "stream_epoch": "synthetic:epoch-1",
+        "sequence": "0",
+        "event_at_precision": "SECOND",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "no implicit dereference",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "opaque_ref": "local:ref:1",
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "resolvable": true
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "rights_decision_ref": "synthetic:egress-allow:1",
+        "redaction_profile": "MINIMAL_REFS_V1",
+        "permitted_operation": "CENTRAL_AUDIT_METADATA",
+        "stream_id": "synthetic:producer-stream",
+        "stream_epoch": "synthetic:epoch-1",
+        "sequence": "0",
+        "event_at_precision": "SECOND",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "DAY precision cannot become midnight instant",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "opaque_ref": "local:ref:1",
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "resolvable": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "rights_decision_ref": "synthetic:egress-allow:1",
+        "redaction_profile": "MINIMAL_REFS_V1",
+        "permitted_operation": "CENTRAL_AUDIT_METADATA",
+        "stream_id": "synthetic:producer-stream",
+        "stream_epoch": "synthetic:epoch-1",
+        "sequence": "0",
+        "event_at_precision": "DAY",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "DAY date cannot have SECOND precision",
+      "data": {
+        "schema_version": 1,
+        "event_id": "synthetic:day-only",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "opaque_ref": "local:ref:1",
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "resolvable": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "rights_decision_ref": "synthetic:egress-allow:1",
+        "redaction_profile": "MINIMAL_REFS_V1",
+        "permitted_operation": "CENTRAL_AUDIT_METADATA",
+        "stream_id": "synthetic:producer-stream",
+        "stream_epoch": "synthetic:epoch-1",
+        "sequence": "0",
+        "event_at_precision": "SECOND",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "UNKNOWN precision cannot carry instant",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "opaque_ref": "local:ref:1",
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "resolvable": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "rights_decision_ref": "synthetic:egress-allow:1",
+        "redaction_profile": "MINIMAL_REFS_V1",
+        "permitted_operation": "CENTRAL_AUDIT_METADATA",
+        "stream_id": "synthetic:producer-stream",
+        "stream_epoch": "synthetic:epoch-1",
+        "sequence": "0",
+        "event_at_precision": "UNKNOWN",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "null event must be UNKNOWN",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": null,
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "opaque_ref": "local:ref:1",
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "resolvable": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "rights_decision_ref": "synthetic:egress-allow:1",
+        "redaction_profile": "MINIMAL_REFS_V1",
+        "permitted_operation": "CENTRAL_AUDIT_METADATA",
+        "stream_id": "synthetic:producer-stream",
+        "stream_epoch": "synthetic:epoch-1",
+        "sequence": "0",
+        "event_at_precision": "SECOND",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "Critic PASS without real receipt",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "opaque_ref": "local:ref:1",
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "resolvable": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "rights_decision_ref": "synthetic:egress-allow:1",
+        "redaction_profile": "MINIMAL_REFS_V1",
+        "permitted_operation": "CENTRAL_AUDIT_METADATA",
+        "stream_id": "synthetic:producer-stream",
+        "stream_epoch": "synthetic:epoch-1",
+        "sequence": "0",
+        "event_at_precision": "SECOND",
+        "critic_status": "PASS",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "NOT_RUN must not carry result",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "opaque_ref": "local:ref:1",
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "resolvable": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "rights_decision_ref": "synthetic:egress-allow:1",
+        "redaction_profile": "MINIMAL_REFS_V1",
+        "permitted_operation": "CENTRAL_AUDIT_METADATA",
+        "stream_id": "synthetic:producer-stream",
+        "stream_epoch": "synthetic:epoch-1",
+        "sequence": "0",
+        "event_at_precision": "SECOND",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": "opaque:unexpected"
+      }
+    },
+    {
+      "name": "sequence number must not become float",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "opaque_ref": "local:ref:1",
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "resolvable": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "rights_decision_ref": "synthetic:egress-allow:1",
+        "redaction_profile": "MINIMAL_REFS_V1",
+        "permitted_operation": "CENTRAL_AUDIT_METADATA",
+        "stream_id": "synthetic:producer-stream",
+        "stream_epoch": "synthetic:epoch-1",
+        "sequence": 9007199254740992,
+        "event_at_precision": "SECOND",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "sequence required",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "opaque_ref": "local:ref:1",
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "resolvable": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "rights_decision_ref": "synthetic:egress-allow:1",
+        "redaction_profile": "MINIMAL_REFS_V1",
+        "permitted_operation": "CENTRAL_AUDIT_METADATA",
+        "stream_id": "synthetic:producer-stream",
+        "stream_epoch": "synthetic:epoch-1",
+        "event_at_precision": "SECOND",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "malformed recorded_at",
+      "data": {
+        "schema_version": 1,
+        "event_id": "evt:synthetic:1",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-28T30:99:00Z",
+        "event_at": "2026-09-27T12:00:00Z",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "opaque_ref": "local:ref:1",
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "resolvable": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "rights_decision_ref": "synthetic:egress-allow:1",
+        "redaction_profile": "MINIMAL_REFS_V1",
+        "permitted_operation": "CENTRAL_AUDIT_METADATA",
+        "stream_id": "synthetic:producer-stream",
+        "stream_epoch": "synthetic:epoch-1",
+        "sequence": "0",
+        "event_at_precision": "SECOND",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    },
+    {
+      "name": "invalid calendar date",
+      "data": {
+        "schema_version": 1,
+        "event_id": "synthetic:day-only",
+        "producer_id": "sim:test",
+        "operation_id": "op:1",
+        "event_kind": "ABSTENTION",
+        "source_environment": "PAPER",
+        "recorded_at": "2026-09-27T12:00:00Z",
+        "event_at": "2026-02-30",
+        "known_at": "2026-09-27T12:00:00Z",
+        "outcome_known_at": null,
+        "assessment_revision": 0,
+        "predecessor_event_id": null,
+        "agent_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_refs": [
+          {
+            "opaque_ref": "local:ref:1",
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "resolvable": false
+          }
+        ],
+        "coverage": "IMPORTED",
+        "evidence_refs": [],
+        "rights_decision_ref": "synthetic:egress-allow:1",
+        "redaction_profile": "MINIMAL_REFS_V1",
+        "permitted_operation": "CENTRAL_AUDIT_METADATA",
+        "stream_id": "synthetic:producer-stream",
+        "stream_epoch": "synthetic:epoch-1",
+        "sequence": "0",
+        "event_at_precision": "DAY",
+        "critic_status": "NOT_RUN",
+        "critic_result_ref": null
+      }
+    }
+  ]
+}
